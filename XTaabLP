@@ -1,0 +1,167 @@
+-- made by XTaab
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("XTaab", "Midnight")
+
+-- Main
+local Tab = Window:NewTab("Fruit")
+local Section = Tab:NewSection("Free Fruit Take Ur Sword slot")
+Section:NewLabel("only 1 time u cant get it back")
+Section:NewButton("Dragon Fruit", "Dont Change ur sword", function()
+local args = {
+    [1] = "Shop",
+    [2] = "Dragon"
+}
+game:GetService("ReplicatedStorage").Remotes.NPC:FireServer(unpack(args))
+end)
+Section:NewButton("Dough Fruit", "Dont Change ur sword", function()
+local args = {
+    [1] = "Shop",
+    [2] = "Dough"
+}
+game:GetService("ReplicatedStorage").Remotes.NPC:FireServer(unpack(args))
+
+end)
+Section:NewButton("Light", "Dont Change ur sword", function()
+local args = {
+    [1] = "Shop",
+    [2] = "Light"
+}
+game:GetService("ReplicatedStorage").Remotes.NPC:FireServer(unpack(args))
+end)
+Section:NewButton("Magma", "Dont Change ur sword", function()
+local args = {
+    [1] = "Shop",
+    [2] = "Magma"
+}
+game:GetService("ReplicatedStorage").Remotes.NPC:FireServer(unpack(args))
+end)
+Section:NewButton("Flame Fruit", "Dont Change ur sword", function()
+local args = {
+    [1] = "Shop",
+    [2] = "Flame"
+}
+game:GetService("ReplicatedStorage").Remotes.NPC:FireServer(unpack(args))
+end)
+Section:NewLabel("Useless")
+Section:NewButton("DarkBlade", "U cant use it but its gonna be in ur inventory", function()
+local args = {
+    [1] = "Shop",
+    [2] = "DarkBlade",
+}
+game:GetService("ReplicatedStorage").Remotes.NPC:FireServer(unpack(args))
+end)
+local Tab = Window:NewTab("Farm")
+local Section = Tab:NewSection("Farming")
+Section:NewButton("Start AutoFarm", "AutoFarming :)", function()
+getgenv().SeaFarm = true
+while SeaFarm == true do
+    if not game:GetService("Workspace").Monster:FindFirstChild("SeaBeast") then
+        if game.Players.LocalPlayer.Backpack:FindFirstChild("SeaBeast Orb") then
+            game.Players.LocalPlayer.Backpack:FindFirstChild("SeaBeast Orb").Parent = game.Players.LocalPlayer.Character
+            firetouchinterest(
+                game.Players.LocalPlayer.Character:FindFirstChild("SeaBeast Orb").Handle,
+                game:GetService("Workspace").Map.Islands["SeaBeast Island"].Base.Model.PlaceToPutOrb,
+                0
+            )
+        else
+            if game.Workspace.Monster:FindFirstChild("SeaSoldier") then
+                local args = {
+                    [1] = "TakeDamage",
+                    [2] = {
+                        ["target"] = workspace.Monster.SeaSoldier,
+                        ["damage"] = 40000
+                    }
+                }
+                game:GetService("ReplicatedStorage").Remotes.DamageRemoteEvent:FireServer(unpack(args))
+            else
+                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
+                    CFrame.new(Vector3.new(-3188, -12.4886, 753.432))
+                )
+            end
+        end
+    else
+        local args = {
+            [1] = "TakeDamage",
+            [2] = {
+                ["target"] = workspace.Monster.SeaBeast,
+                ["damage"] = 40000
+            }
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageRemoteEvent:FireServer(unpack(args))
+    end
+    wait()
+end
+end)
+Section:NewButton("Stop AutoFarming", ";)", function()
+getgenv().SeaFarm = false
+while SeaFarm == true do
+    if not game:GetService("Workspace").Monster:FindFirstChild("SeaBeast") then
+        if game.Players.LocalPlayer.Backpack:FindFirstChild("SeaBeast Orb") then
+            game.Players.LocalPlayer.Backpack:FindFirstChild("SeaBeast Orb").Parent = game.Players.LocalPlayer.Character
+            firetouchinterest(
+                game.Players.LocalPlayer.Character:FindFirstChild("SeaBeast Orb").Handle,
+                game:GetService("Workspace").Map.Islands["SeaBeast Island"].Base.Model.PlaceToPutOrb,
+                0
+            )
+        else
+            if game.Workspace.Monster:FindFirstChild("SeaSoldier") then
+                local args = {
+                    [1] = "TakeDamage",
+                    [2] = {
+                        ["target"] = workspace.Monster.SeaSoldier,
+                        ["damage"] = 40000
+                    }
+                }
+                game:GetService("ReplicatedStorage").Remotes.DamageRemoteEvent:FireServer(unpack(args))
+            else
+                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(
+                    CFrame.new(Vector3.new(-3188, -12.4886, 753.432))
+                )
+            end
+        end
+    else
+        local args = {
+            [1] = "TakeDamage",
+            [2] = {
+                ["target"] = workspace.Monster.SeaBeast,
+                ["damage"] = 40000
+            }
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageRemoteEvent:FireServer(unpack(args))
+    end
+    wait()
+end
+end)
+local Tab = Window:NewTab("Teleport")
+local Section = Tab:NewSection("Teleport")
+Section:NewButton("Starter Island", ":D", function()
+    game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-535.157104, -23.8349628, -830.896912, -0.0784600154, -2.56153285e-08, -0.996917248, 4.61376493e-09, 1, -2.60576538e-08, 0.996917248, -6.64402622e-09, -0.0784600154)
+    end)
+Section:NewButton("Pirate Island", ":D", function()
+    game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1533.45496, -25.9936161, 297.581543, -0.808664262, 6.43096132e-10, 0.588270426, 3.65575215e-09, 1, 3.93217103e-09, -0.588270426, 5.33037703e-09, -0.808664262)
+end)
+Section:NewButton("Marine Island", ":D", function()
+    game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2028.86877, -23.1382103, -1258.04651, -0.266661137, -2.13537295e-08, 0.963790357, -5.79044617e-08, 1, 6.13500584e-09, -0.963790357, -5.41717959e-08, -0.266661137)
+end)
+Section:NewButton("Monkey Island", ":D", function()
+    game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1074.18591, -25.4937687, -1760.52905, 0.766434491, -4.26830926e-09, 0.642322481, 1.14199938e-09, 1, 5.28245847e-09, -0.642322481, -3.3151264e-09, 0.766434491)
+end)
+Section:NewButton("Desert Island", ":D", function()
+    game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-486.823608, -23.2942162, 562.536133, -0.920742035, 1.00412919e-07, -0.390171945, 1.05826977e-07, 1, 7.62119701e-09, 0.390171945, -3.42735582e-08, -0.920742035)
+end)
+Section:NewButton("Snow Island", ":D", function()
+    game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-19.1198997, -22.1090698, -2187.29321, 0.754313707, -6.25706642e-09, -0.656514108, -4.74775508e-09, 1, -1.49857602e-08, 0.656514108, 1.44209338e-08, 0.754313707)
+end)
+Section:NewButton("Sky Island", ":D", function()
+    game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2864.79858, 503.5802, -2452.98828, 0.999879658, 3.21157412e-09, -0.0155129042, -3.44958795e-09, 1, -1.53162016e-08, 0.0155129042, 1.53678723e-08, 0.999879658)
+end)
+Section:NewButton("Bubble Island", ":D", function()
+    game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1138.33411, -22.8454323, -3206.1377, 0.753445566, -7.18996134e-08, 0.65751034, 6.9152037e-08, 1, 3.0109522e-08, -0.65751034, 2.27822934e-08, 0.753445566)
+end)
+Section:NewButton("MarineFord", ":D", function()
+game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3953.05078, 15.403882, -1063.05396, -0.954292953, -2.61299533e-08, 0.298872828, -4.00905051e-08, 1, -4.05795788e-08, -0.298872828, -5.07067703e-08, -0.954292953)
+end)
+Section:NewButton("SeaBeast Island", ":D", function()
+   game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3024.46216, -12.2142372, 545.746277, -0.614376187, -2.67203646e-08, 0.789013267, 4.95506356e-08, 1, 7.24488416e-08, -0.789013267, 8.36069489e-08, -0.614376187)
+end)
